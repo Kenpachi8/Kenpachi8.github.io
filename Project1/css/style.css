@@ -43,11 +43,9 @@ header p {
 }
 /*Шапка с логотипом*/
 nav{
-	padding-right: 180px;
-	padding-left: 180px;
-	height: 140px;
-	display: flex;
-	align-items: center;	
+	padding: 30px 180px;
+	display: flex;	
+	justify-content: center;
 }
 nav ul li:first-child{
 	display: block;
@@ -70,14 +68,12 @@ nav a{
 .consultation{
 	display: block;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	margin-left: 32px;
-	padding: 5px;
 	height: 40px;
 	padding: 0 20px;
 	background-color: red;
 	border-radius: 4px;
+	margin-left: 20px;
 }
 
 /*Баннер*/
@@ -120,9 +116,6 @@ nav a{
 	display: flex;
 	margin-top: 30px;
 }
-.marketing{
-	max-width: 260px;
-}
 #mark{
 	margin-left: 90px;
 	margin-right: 90px;
@@ -149,7 +142,6 @@ nav a{
 .step{
 	max-height: 236px;
 	background-color: white;
-	min-width: 1000px;
 	display: flex;
 	align-items: center;
 	margin: 40px 0;
@@ -159,6 +151,7 @@ nav a{
 .stepContainer{
 	max-height: 100px;
 	display: flex;
+	align-items: center;
 	margin-left: -50px;
 }
 .stepContainer img{
@@ -175,7 +168,6 @@ nav a{
 .stepR{
 	max-height: 236px;
 	background-color: white;
-	min-width: 1000px;
 	display: flex;
 	align-items: center;
 	margin: 40px 0;
@@ -185,6 +177,7 @@ nav a{
 .stepContainerR{
 	max-height: 100px;
 	display: flex;
+	align-items: center;
 	margin-right: -50px;
 }
 .stepContainerR img{
@@ -204,23 +197,26 @@ nav a{
 	min-height: 650px;
 	color: white;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	text-align: center;
 	align-items: center;
+	flex-direction: column;
 	padding: 100px 170px;
 }
 .projects{
+	border: 2px solid black;
+	display: inline-block;
 	display: flex;
-	flex-wrap: wrap;
-	background-color: #f35e59;
-	width: 1020px;
+	flex-direction: row;
+  	flex-wrap: wrap;
 	margin-top: 40px;
+	width: 1012px;
 }
 .tele{
-	width: 255px;
+	width: 253px;
 	height: 253px;
 	display: flex;
+	background-color: #f35e59;
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
@@ -378,4 +374,10 @@ footer input{
 	width: 100%;
 	padding-top: 20px;	
 	background-color: #515151;
+}
+
+@media screen and (max-width: 1140px){
+	.projects{
+	width: 506px;
+	}
 }
