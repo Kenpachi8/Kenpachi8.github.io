@@ -24,7 +24,7 @@ input{
 	text-decoration: none;
 	text-align: center;
 	height: 50px;
-	width: 600px;
+	width: 900px;
 }
 .answer{
 	margin-top: 10px;
@@ -35,5 +35,5 @@ input{
 
 .version{
 	text-decoration: none;
-	
+
 }
