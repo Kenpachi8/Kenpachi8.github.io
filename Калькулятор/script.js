@@ -1,5 +1,5 @@
-let button = document.querySelector('button');
-button.addEventListener('click', Calculate)
+let button = document.querySelector('input');
+button.addEventListener('keyup', Calculate)
 
 function inputEditor(input){
 
@@ -22,7 +22,9 @@ function Calculate () {
 	let input = document.querySelector('input').value;
 	let answer = document.querySelector('.answer');
 	input = inputEditor(input);
-	let result = eval(input);
+	result = eval(input);
 	answer.innerHTML = '';
-	answer.insertAdjacentText('afterbegin', result);
+	if (result != undefined){
+		answer.insertAdjacentText('afterbegin', result);
+	}
 }
