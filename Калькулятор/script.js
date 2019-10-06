@@ -73,6 +73,8 @@ function inputEditor(input){
 			case ';':
 			case "'":
 			case '"':
+			case '{':
+			case '[':
 				input[i] = 'z'
 				break;
 			case ':':
@@ -174,8 +176,12 @@ function Calculate () {
 		answer.insertAdjacentText('beforeEnd', "Ошибка ввода, не делите на 0");
 	}
 
+	else if (result == '\u221E' || result == '-\u221E') {
+		answer.innerHTML = '= ';
+		answer.insertAdjacentText('beforeEnd', result);
+	}
 	else {
 		answer.innerHTML = '= ';
-		answer.insertAdjacentText('beforeEnd', 0 + result);
+		answer.insertAdjacentText('beforeEnd', result);
 	}
 }
