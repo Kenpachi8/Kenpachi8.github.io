@@ -161,6 +161,7 @@ function Calculate () {
 	console.log('  ' + result);
 	
 	if (result == 'NaN') {
+		input.className = 'error'; 
 		answer.innerHTML = '';
 		answer.insertAdjacentText('beforeEnd', "Ошибка ввода, не делите на 0");
 	}
