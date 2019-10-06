@@ -77,8 +77,14 @@ function inputEditor(input){
 			case '[':
 				input[i] = 'z'
 				break;
+			case '÷':
 			case ':':
 				input[i] = '/'
+				break;
+			case '×':
+			case '•':
+				input[i] = '*';
+				break;
 			case '/':
 			case '*':
 			case '.':
