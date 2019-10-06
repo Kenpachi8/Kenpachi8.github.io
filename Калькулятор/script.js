@@ -70,6 +70,9 @@ function inputEditor(input){
 			case 'x':
 			case '_':
 			case '%':
+			case ';':
+			case "'":
+			case '"':
 				input[i] = 'z'
 				break;
 			case ':':
@@ -130,7 +133,6 @@ function inputEditor(input){
 		case '+':
 		case '-':
 		case '(':
-		case ')':
 			input[input.length-1] = '';
 			break;
 	}
@@ -138,7 +140,7 @@ function inputEditor(input){
 	for (let i = 0; i < input.length; i++) {
 		text += input[i];
 	}
-
+	console.log('text: ' + text)
 	return text;
 }
 
