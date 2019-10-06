@@ -79,6 +79,7 @@ function inputEditor(input){
 				input[i] = '/'
 			case '/':
 			case '*':
+			case: '.'
 				if (i > 0 && input[i - 1] == '(') {
 					input[i] = 'z';
 				}
