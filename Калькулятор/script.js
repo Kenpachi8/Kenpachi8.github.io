@@ -52,7 +52,7 @@ function inputEditor(input){
 		case '*':
 		case ':':
 		case '/':
-			input[i] = 'z'
+			input[0] = 'z'
 			break;
 		case '+':
 		case '-':
@@ -62,6 +62,11 @@ function inputEditor(input){
 
 	for (let i = 0; i < input.length; i++) {
 		switch (input[i]) {
+			case ',':
+				input[i] = '.';
+				break;
+			case '&':
+			case '|':
 			case 'x':
 			case '_':
 			case '%':
@@ -158,7 +163,7 @@ function Calculate () {
 	//console.log(result);
 
 	result = resultEditor(result); //Кастомизация результата
-	console.log('  ' + result);
+	//console.log('  ' + result);
 	
 	if (result == 'NaN') {
 		input.className = 'error'; 
@@ -168,6 +173,6 @@ function Calculate () {
 
 	else {
 		answer.innerHTML = '= ';
-		answer.insertAdjacentText('beforeEnd', result);
+		answer.insertAdjacentText('beforeEnd', 0 + result);
 	}
 }
