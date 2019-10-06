@@ -1,26 +1,25 @@
-let button = document.querySelector('input');
-button.addEventListener('keyup' || 'keydown', Calculate)
-/*
-function inputEditor(input) {
+let answer = document.querySelector('.answer');
+let input = document.querySelector('input');
+input.addEventListener('keyup' || 'keydown', Calculate);
 
-	let text = '';
-
-	for (let i = 0; i < input.length; i++) {
-		if(input[i] != ':') {
-			text += input[i];
-		}
-
-		else{
-			text += "/";
-		}
+//действие при открытии окна
+	window.onload = function(){
+		answer.innerHTML = '= 0';
 	}
 
-	return text;
+	
+function isNumber(symbol) {
+	if ('0' <= symbol && symbol <= '9') {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
-*/
+
 function resultEditor(str) {
 	if (str == undefined) {
-		str = '= 0';
+		str = '';
 		return str;
 	}
 
@@ -38,65 +37,126 @@ function resultEditor(str) {
 }
 
 function inputEditor(input){
-
+	let validSymbols = ['-', '+', '/', '*', ':'];
 	let text = '';
 	input = input.split('');
-
-	if (!(('0' <= input[input.length-1]) && (input[input.length-1] <= '9'))) {
-		input.splice(input.length-1, 1);
+	
+	if (input[0] == '') {
+		return 0;
 	}
 
-	for (let i = 0; i < input.length; i++) {
-
-		if (!(('0' <= input[i]) 
-			&& (input[i] <= '9')) 
-			&& (input[i] == input[i + 1])) {
-			if (input[i] == '-') {
-				input[i] = '+';
-				input.splice(i + 1, 1);
-			}
-			
-			else {
-				input.splice(i, 1);
-				i--;
-			}
-
-			} 
-
-		else if (input[i] == ':') {
-			input[i] = '/';
+	switch (input[0]) {
+		case '*':
+		case ':':
+		case '/':
+			input[i] = 'z'
+			break;
+		case '+':
+		case '-':
+			input.unshift('0');
+			break;
 		}
+
+	for (let i = 0; i < input.length; i++) {
+		switch (input[i]) {
+			case 'x':
+			case '_':
+			case '%':
+				input[i] = 'z'
+				break;
+			case ':':
+				input[i] = '/'
+			case '/':
+			case '*':
+				if (i > 0 && input[i - 1] == '(') {
+					input[i] = 'z';
+				}
+				else if (input[i] == input[i + 1]) {
+					input[i] = '';
+				}
+				else if (validSymbols.includes(input[i + 1])) {
+					input[i] = 'z';
+				}
+				break;
+			case '0':
+				if (i < input.length-1 && isNumber(input[i + 1])) {
+					input[i] = '';
+				}
+				break;
+			console.log(input);
+			case '-':
+				if (input[i + 1] == '+') {
+					input[i+1] = '-';
+					input[i] = '';
+				}
+
+				else if (input[i + 1] == '-') {
+					input[i + 1] = '+';
+					input[i] = '';
+				}
+				console.log('c - ' + input);
+				break;
+
+			case '+':
+				if(i < input.length - 1) {
+
+					if (input[i + 1] == '-') {
+						input[i] = '';
+					}
+					
+					else if (input[i + 1] == '+') {
+						input[i + 1] = '+';
+						input[i] = '';
+					}
+				}
+				console.log('c + ' + input);
+				break;
+
+		}
+	}
+
+	switch (input[input.length-1]) {
+		case '*':
+		case ':':
+		case '/':
+		case '+':
+		case '-':
+		case '(':
+		case ')':
+			input[input.length-1] = '';
+			break;
 	}
 
 	for (let i = 0; i < input.length; i++) {
 		text += input[i];
 	}
+
 	return text;
 }
 
 
 function Calculate () {
-	let input = document.querySelector('input').value;
-	let answer = document.querySelector('.answer');
-	input = inputEditor(input);
+	input.className = '';
+	let inputValue = document.querySelector('input').value;
+	inputValue = inputEditor(inputValue); //Корректируются введенные данные
+	//console.log('fdfjd ' + inputValue)
+		try {
+			result = eval(inputValue);
+		}
 
-	try {
-		result = eval(input);
-	}
+		catch {
+			result = "Ошибка ввода"
+			input.className = 'error'; 
+			answer.innerHTML = '';
+			answer.insertAdjacentText('beforeEnd', result);
+			return 0;
+		}
 
-	catch {
-		result = "Ошибка ввода"
-		answer.innerHTML = '';
-		answer.insertAdjacentText('afterbegin', result);
-		return 0;
-	}
+	//console.log(result);
 
-	console.log(result);
-
-	result = resultEditor(result);
+	result = resultEditor(result); //Кастомизация результата
 	console.log('  ' + result);
-
-	answer.innerHTML = '';
-	answer.insertAdjacentText('afterbegin', result);
+	answer.innerHTML = '= ';
+	answer.insertAdjacentText('beforeEnd', result);
 	
 }
