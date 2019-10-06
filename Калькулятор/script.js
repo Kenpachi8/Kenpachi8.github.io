@@ -22,6 +22,9 @@ function resultEditor(str) {
 		str = '';
 		return str;
 	}
+	else if (isNaN(str)) {
+		return 'NaN';
+	}
 
 	else if (str == Infinity) {
 		str = '\u221E'
@@ -156,7 +159,14 @@ function Calculate () {
 
 	result = resultEditor(result); //Кастомизация результата
 	console.log('  ' + result);
-	answer.innerHTML = '= ';
-	answer.insertAdjacentText('beforeEnd', result);
 	
+	if (result == 'NaN') {
+		answer.innerHTML = '';
+		answer.insertAdjacentText('beforeEnd', "Ошибка ввода, не делите на 0");
+	}
+
+	else {
+		answer.innerHTML = '= ';
+		answer.insertAdjacentText('beforeEnd', result);
+	}
 }
