@@ -76,6 +76,10 @@ function inputEditor(input) {
 		{
 			input[i] = '.'
 		}
+		else if (input[i] == ' ')
+		{
+			input[i] = ''
+		}
 	}
 
 	let firstElem, lastElem, countMinus;
@@ -174,7 +178,7 @@ function Calculate () {
 	if (result == 'NaN') {
 		input.className = 'error'; 
 		answer.innerHTML = '';
-		answer.insertAdjacentText('beforeEnd', "Ошибка ввода, не делите на 0");
+		answer.insertAdjacentText('beforeEnd', "Математически неверная операция");
 	}
 
 	else if (result == '\u221E' || result == '-\u221E') {
