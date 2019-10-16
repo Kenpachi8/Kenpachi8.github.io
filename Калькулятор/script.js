@@ -40,7 +40,7 @@ function resultEditor(str) {
 }
 
 function inputEditor(input) {
-	let validSymbols = ['-', '+', '.', ',', '/', ':', '÷', '*', '×', '•'];
+	let validSymbols = ['-', '+', '.', ',', '/', ':', '÷', '*', '×', '•', '(', ')'];
 	input = '0+' + input + '+0';
 	let text = '';
 	input = input.split('');
@@ -137,7 +137,7 @@ function inputEditor(input) {
 	{
 		text += input[i];
 	}
-
+	console.log("Окончательный результат " + text)
 	return text;
 }
 
