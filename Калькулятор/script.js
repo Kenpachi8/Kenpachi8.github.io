@@ -41,7 +41,7 @@ function resultEditor(str) {
 
 function inputEditor(input) {
 	let validSymbols = ['-', '+', '.', ',', '/', ':', '÷', '*', '×', '•', '(', ')'];
-	input = '0+' + input + '+0';
+	input = '0+' + input;
 	let text = '';
 	input = input.split('');
 	console.log(input);
@@ -131,6 +131,13 @@ function inputEditor(input) {
 				input[i] = '';
 		}
 	}
+
+	if (validSymbols.includes(input[input.length - 1]) 
+			&& input[input.length - 1] != '('
+			&& input[input.length - 1] != ')') 
+		{
+				input[input.length - 1] = '';
+		}
 
 
 	for (let i = 0; i < input.length; i++) 
