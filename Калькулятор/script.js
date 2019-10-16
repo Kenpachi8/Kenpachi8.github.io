@@ -39,117 +39,105 @@ function resultEditor(str) {
 	return str;
 }
 
-function inputEditor(input){
-	let validSymbols = ['-', '+', '/', '*', ':'];
+function inputEditor(input) {
+	let validSymbols = ['-', '+', '.', ',', '/', ':', '÷', '*', '×', '•'];
+	input = '0+' + input + '+0';
 	let text = '';
 	input = input.split('');
+	console.log(input);
 	
-	if (input[0] == '') {
+	if (input[0] == '') 
+	{
 		return 0;
 	}
 
-	switch (input[0]) {
-		case '*':
-		case ':':
-		case '/':
-			input[0] = 'z'
-			break;
-		case '+':
-		case '-':
-			input.unshift('0');
-			break;
-		}
-
-	for (let i = 0; i < input.length; i++) {
-		switch (input[i]) {
-			case ',':
-				input[i] = '.';
-				break;
-			case '&':
-			case '|':
-			case 'x':
-			case '_':
-			case '%':
-			case ';':
-			case "'":
-			case '"':
-			case '{':
-			case '[':
-				input[i] = 'z'
-				break;
-			case '÷':
-			case ':':
-				input[i] = '/'
-				break;
-			case '×':
-			case '•':
-				input[i] = '*';
-				break;
-			case '/':
-			case '*':
-			case '.':
-				if (i > 0 && input[i - 1] == '(') {
-					input[i] = 'z';
-				}
-				else if (input[i] == input[i + 1]) {
-					input[i] = '';
-				}
-				else if (validSymbols.includes(input[i + 1])) {
-					input[i] = 'z';
-				}
-				break;
-			case '0':
-				if (i < input.length-1 && isNumber(input[i + 1])) {
-					input[i] = '';
-				}
-				break;
-			console.log(input);
-			case '-':
-				if (input[i + 1] == '+') {
-					input[i+1] = '-';
-					input[i] = '';
-				}
-
-				else if (input[i + 1] == '-') {
-					input[i + 1] = '+';
-					input[i] = '';
-				}
-				console.log('c - ' + input);
-				break;
-
-			case '+':
-				if(i < input.length - 1) {
-
-					if (input[i + 1] == '-') {
-						input[i] = '';
-					}
-					
-					else if (input[i + 1] == '+') {
-						input[i + 1] = '+';
-						input[i] = '';
-					}
-				}
-				console.log('c + ' + input);
-				break;
-
+	for (let i = 0; i < input.length; i++) 
+	{
+		if (!validSymbols.includes(input[i])
+			&& !isNumber(input[i])) 
+		{
+			console.log(input[i])
+			return 'z';
 		}
 	}
 
-	switch (input[input.length-1]) {
-		case '*':
-		case ':':
-		case '/':
-		case '+':
-		case '-':
-		case '(':
-			input[input.length-1] = '';
-			break;
+	for (let i = 0; i < input.length; i++) 
+	{
+		if (input[i] == ':' || input[i] == '÷')
+		{
+			input[i] = '/';
+		}
+
+		else if (input[i] == '×' || input[i] == '•')
+		{
+			input[i] = '*';	
+		}
+		else if (input[i] == ',')
+		{
+			input[i] = '.'
+		}
 	}
 
-	for (let i = 0; i < input.length; i++) {
+	let firstElem, lastElem, countMinus;
+	countMinus = 0;
+
+	for (let i = 0; i < input.length; i++) 
+	{
+		if ((input[i] == '+' || input[i] == '-')
+			&& (input[i + 1] == '+' || input[i + 1] == '-'))
+		{
+
+			firstElem = i;
+
+			for (let j = firstElem; j < input.length; j++) 
+			{
+				if (input[j] == '+' || input[j] == '-') 
+				{
+					if (input[j] == '-')
+					{
+						countMinus++;
+					}
+					lastElem = j;
+				}
+				else break;
+			}
+
+			if (countMinus % 2 == 0)
+			{
+				input[firstElem] = '+';
+			}
+			else
+			{
+				input[firstElem] = '-';
+			}
+
+			input.splice(firstElem + 1, lastElem - firstElem);
+
+			countMinus = 0;
+			firstElem = 0;
+			lastElem = 0;
+		}
+	}
+
+
+
+	for (let i = 0; i < input.length - 1; i++) 
+	{
+		if (validSymbols.includes(input[i]) 
+			&& input[i] == input[i + 1]
+			&& input[i] != '('
+			&& input[i] != ')') 
+		{
+				input[i] = '';
+		}
+	}
+
+
+	for (let i = 0; i < input.length; i++) 
+	{
 		text += input[i];
 	}
-	console.log('text: ' + text)
+
 	return text;
 }
 
