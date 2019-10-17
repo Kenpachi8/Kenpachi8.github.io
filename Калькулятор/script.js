@@ -40,7 +40,7 @@ function resultEditor(str) {
 }
 
 function inputEditor(input) {
-	let validSymbols = ['-', '+', '.', ',', '/', ':', '÷', '*', '×', '•', '(', ')'];
+	let validSymbols = ['-', '+', ' ', '.', ',', '/', ':', '÷', '*', '×', '•', '(', ')'];
 	input = '0+' + input;
 	let text = '';
 	input = input.split('');
