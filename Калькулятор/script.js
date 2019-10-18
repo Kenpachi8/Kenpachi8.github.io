@@ -134,7 +134,13 @@ function inputEditor(input) {
 			&& input[input.length - 1] != '('
 			&& input[input.length - 1] != ')') 
 		{
-			input.splice(input.length - 1, 1);
+			if (input[input.length - 1] == '*'
+			&& input[input.length - 2] == '*')
+			{
+				input.splice(input.length - 2, 2);
+			}
+			else
+				input.splice(input.length - 1, 1);
 		}
 
 
