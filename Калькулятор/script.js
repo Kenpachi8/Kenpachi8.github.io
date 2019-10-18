@@ -40,7 +40,7 @@ function resultEditor(str) {
 }
 
 function inputEditor(input) {
-	let validSymbols = ['-', '+', ' ', '.', ',', '/', ':', '÷', '*', '×', '•', '(', ')'];
+	let validSymbols = [' ', '-', '+', '.', ',', '/', ':', '÷', '*', '×', '•', '(', ')'];
 	input = '0+' + input;
 	let text = '';
 	input = input.split('');
@@ -78,7 +78,9 @@ function inputEditor(input) {
 		}
 		else if (input[i] == ' ')
 		{
-			input[i] = ''
+			input.splice(i, 1);
+			i--;
+			console.log(input)
 		}
 	}
 
@@ -123,24 +125,11 @@ function inputEditor(input) {
 		}
 	}
 
-
-
-	for (let i = 0; i < input.length - 1; i++) 
-	{
-		if (validSymbols.includes(input[i]) 
-			&& input[i] == input[i + 1]
-			&& input[i] != '('
-			&& input[i] != ')') 
-		{
-				input[i] = '';
-		}
-	}
-
 	if (validSymbols.includes(input[input.length - 1]) 
 			&& input[input.length - 1] != '('
 			&& input[input.length - 1] != ')') 
 		{
-				input[input.length - 1] = '';
+			input[input.length - 1] = '';
 		}
 
 
@@ -149,6 +138,10 @@ function inputEditor(input) {
 		text += input[i];
 	}
 	console.log("Окончательный результат " + text)
+	if (text.includes('//'))
+	{
+		text = 'z';
+	}
 	return text;
 }
 
