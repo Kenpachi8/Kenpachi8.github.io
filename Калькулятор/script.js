@@ -40,7 +40,7 @@ function resultEditor(str) {
 }
 
 function inputEditor(input) {
-	let validSymbols = [' ', '-', '+', '.', ',', '/', ':', '÷', '*', '×', '•', '(', ')'];
+	let validSymbols = [' ', '-', '+', '.', ',', '/', ':', '÷', '*', '×', '•', '^', '**', '(', ')'];
 	input = '0+' + input;
 	let text = '';
 	input = input.split('');
@@ -75,6 +75,11 @@ function inputEditor(input) {
 		else if (input[i] == ',')
 		{
 			input[i] = '.'
+		}
+		else if (input[i] == '^')
+		{
+			input[i] = '**';
+
 		}
 		else if (input[i] == ' ')
 		{
@@ -129,7 +134,7 @@ function inputEditor(input) {
 			&& input[input.length - 1] != '('
 			&& input[input.length - 1] != ')') 
 		{
-			input[input.length - 1] = '';
+			input.splice(input.length - 1, 1);
 		}
 
 
