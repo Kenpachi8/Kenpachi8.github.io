@@ -81,4 +81,7 @@ nav{
 		width: 60%;
 		margin-left: -30px;
 	}
+	.hide{
+		display: none;
+	}
 }
