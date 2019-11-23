@@ -16,12 +16,12 @@ nav{
 }
 .menu{
 	height: 25%;
-	width: 40px;
+	width: 50px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	border: 1px solid #000;
+	border: 1px solid #DCDCDC;
 	background-color: #fff;
 	cursor: pointer;
 	font-size: 90%;
@@ -66,4 +66,19 @@ nav{
 	background-color: rgba(158, 157, 153, .6);
 	border-radius: 15%;
 	color: #fff;
+}
+
+@media screen and (min-width:600px) and (max-width:1040px){
+	.menu{
+		width: 60px;
+	}
+	.neple{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.text_container{
+		width: 60%;
+		margin-left: -30px;
+	}
 }
