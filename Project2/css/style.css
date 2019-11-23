@@ -136,8 +136,6 @@ hr{
 }
 
 
-
-
 /*Увеличение картинки при клике*/
 .fullScreenPhotoDiv{	
 	width: 100vw;
@@ -244,6 +242,18 @@ hr{
 	display: none;
 	height: 0;
 }
+@media screen and (min-width:1041px) and (max-width:1300px){
+	.galery_text{
+		height: 24vh;
+	}
+	.photo{
+		height: 38vh;
+	}
+	.hide{
+		display: none;
+		height: 0;
+	}
+}
 
 @media screen and (min-width:600px) and (max-width:1040px){
 	.menu{
@@ -274,6 +284,12 @@ hr{
 		border: 0;
 		background: #000;
 		margin: 0 50px 0px 0;
+	}
+	.galery_text{
+		height: 24vh;
+	}
+	.photo{
+		height: 38vh;
 	}
 	.hide{
 		display: none;
@@ -307,11 +323,15 @@ hr{
 	hr{
 		display: none;
 	}
-	.hide{
-		display: none;
-		height: 0;
+
+	.galery_text{
+		height: auto;
 	}
 	.about{
 		padding-right: 20px;
+	}
+	.hide{
+		display: none;
+		height: 0;
 	}
 }
