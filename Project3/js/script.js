@@ -1,7 +1,7 @@
 let screenHeight = document.documentElement.clientHeight;
-document.querySelector('#box3').style.width = 
-	document.querySelector('#box2').clientWidth + 
-	document.querySelector('#box1').clientWidth + 20 +'px'
+document.querySelector('.box3').style.width = 
+	document.querySelector('.box2').clientWidth + 
+	document.querySelector('.box1').clientWidth + 20 +'px'
 
 document.querySelector('.questions').style.height = 
 	document.querySelector('.question_container').clientHeight + 'px'
