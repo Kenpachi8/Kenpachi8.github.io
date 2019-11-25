@@ -212,19 +212,19 @@ body{
  	justify-content: center;
 	align-items: center;
 }
-#box1{
+.box1{
  	background: url(../img/3.jpg) no-repeat center top / cover;
  	width: 40vw;
  	height: 40vw;
  	margin: 10px;
 }
-#box2{
+.box2{
 	background: url(../img/4.jpg) no-repeat center top / cover;
  	width: 40vw;
  	height: 40vw;
  	margin: 10px;
 }
-#box3{
+.box3{
  	background: url(../img/5.jpg) no-repeat center top / cover;
  	height: 30vw;
  	margin-top: 60px;
