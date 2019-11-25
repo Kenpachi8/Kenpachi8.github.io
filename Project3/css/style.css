@@ -1,0 +1,381 @@
+*{
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+.menu_container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.nav{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+	color: white;
+	font-size: 23pt;
+	font-weight: 100;
+	padding: 10px 0;
+}
+.nav a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	cursor: pointer;
+	color: white;
+}
+.menu{
+	margin-right: 90px;
+	font-weight: 200;
+}
+/*.menu:first-child{
+	margin-left: 111px;
+}*/
+
+.menu:hover{
+	text-decoration: underline;
+}
+/*
+ nav a:before{
+	content: "\2022\00A0";
+	font-size: 36pt;
+	font-weight: 500;
+	color: black;
+ }
+ */
+ .logo{
+	font-weight: 800;
+	font-size: 52pt;
+	margin-right: 0px;
+	position: absolute;
+	right: 10px;
+ }
+
+ /*Main*/
+ .main{
+ 	display: flex;
+ 	justify-content: center;
+	align-items: center;
+	text-align: center;
+	position: relative;
+ 	overflow: hidden;
+ }
+ .main img{
+ 	width: 50vw;
+ 	height: auto;
+ }
+ .main .gradient{
+ 	width: 100%;
+ 	height: 100%;
+ 	background: radial-gradient(rgba(255,255,255,0.1), rgba(0, 0, 0, 0.9));
+ 	position: absolute;
+ 	z-index: 0;
+ 	opacity: 0;
+ 	transition: 2400ms;
+ }
+ .neple_layer{
+ 	display: flex;
+ 	justify-content: center;
+	align-items: center;
+	text-align: center;
+ 	font-weight: 100;
+ 	font-size: 200pt;
+	color: white;
+ }
+ .letterspacing{
+ 	width: 7vw;
+ }
+ .main_text{
+ 	display: flex;
+ 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+ 	-moz-user-select: none;
+  	-khtml-user-select: none;
+  	-webkit-user-select: none;
+  	user-select: none;
+ 	position: absolute;
+ 	margin-top: 90vh;
+ 	transition: 1500ms;
+ }
+ .main_text hr{
+ 	margin-top: -40px;
+	background: #fff;
+	height: 3px;
+	width: 0;
+	-webkit-transition: 900ms;
+    -o-transition: 900ms;
+    -moz-transition: 900ms;
+	transition: 900ms;
+ }
+.helo{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+ .helo:not(h1){
+ 	padding: 20px 180px 100px 180px;
+	text-align: center;
+	font-weight: 200;
+	color: #000;
+	font-size: 20pt;
+ }
+ .helo h1{
+ 	font-weight: 900; 
+ 	font-size: 100pt;
+ 	text-align: center;
+ }
+
+ .about1{
+ 	background: #fbfbfb;
+ 	padding: 100px 300px 100px 300px;
+ 	text-align: center;
+	font-weight: 200;
+	color: #000;
+	font-size: 20pt;
+ }
+ .about2{
+ 	background: #000;
+ 	padding: 100px 400px 100px 400px;
+ 	text-align: center;
+	font-weight: 200;
+	color: #fff;
+	font-size: 20pt;
+ }
+
+ .questions{
+ 	background: url(../img/questionbg.jpg) no-repeat center top / cover; 
+ 	overflow: hidden;
+}
+
+.question_container{
+	margin-top: 200%;
+	display: flex;
+	padding: 100px 50px 100px 50px;
+ 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	overflow: hidden;
+	transition: 2400ms;
+}
+
+.questionbox{
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+.questionbox h1{
+	font-weight: 300;
+	font-size: 40pt;
+	color: #fff;
+}
+.questionbox a{
+	text-decoration: none;
+	font-weight: 100;
+	font-size: 20pt;
+	color: #fff;
+}
+.questionbox a:hover{
+	text-decoration: underline;
+	font-weight: 100;
+}
+.gradient2{
+	margin-top: 200%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+ 	height: 100%;
+ 	background: radial-gradient(rgba(255,255,255,0.1), rgba(0, 0, 0, 0.9));
+ 	position: absolute;
+ 	z-index: 0;
+ 	opacity: 1;
+ 	transition: 2400ms;
+}
+.questions_line{
+	display: flex;
+ 	justify-content: center;
+	align-items: center;
+}
+#box1{
+ 	background: url(../img/3.jpg) no-repeat center top / cover;
+ 	width: 40vw;
+ 	height: 40vw;
+ 	margin: 10px;
+}
+#box2{
+	background: url(../img/4.jpg) no-repeat center top / cover;
+ 	width: 40vw;
+ 	height: 40vw;
+ 	margin: 10px;
+}
+#box3{
+ 	background: url(../img/5.jpg) no-repeat center top / cover;
+ 	height: 30vw;
+ 	margin-top: 60px;
+}
+
+.just_photos{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 70px 50px 70px 50px;
+}
+.just_photos img:not(:last-child){
+	margin-right: 40px;
+	width: 20vw;
+	height: auto;
+}
+
+.just_photos img:last-child{
+	width: 20vw;
+	height: auto;
+}
+.social{
+	padding: 10px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #1a1a1a;
+}
+.social img{
+	height: 60px;
+	margin-left: 20px;
+}
+
+.social img:hover{
+	opacity: 0.7;
+}
+
+@media screen and (max-width:1400px){
+	.nav{
+		font-size: 16pt;
+	}
+	.logo{
+		font-size: 42pt;
+	}
+	.neple_layer{
+ 		font-size: 140pt;
+ 	}
+ 	 .helo:not(h1){
+		font-size: 12pt;
+	}
+
+	 .helo h1{
+ 		font-size: 60pt;
+ 	}
+
+ 	.about1, .about2{
+		font-size: 12pt;
+	}
+	.questionbox h1{
+		font-size: 28pt;
+	}
+	.questionbox a{
+		font-size: 12pt;
+	}
+}
+
+@media screen and (max-width:1000px){
+	.about1{
+ 		background: #fbfbfb;
+ 		padding: 100px 160px 100px 160px;
+ 	}
+ 	.about2{
+ 		padding: 60px 160px 60px 160px;
+	}	
+	.helo{
+		padding: 20px 90px 60px 90px;	
+	}
+	.main_text hr{
+ 		margin-top: -10px;
+	}
+}
+@media screen and (max-width:800px){
+	.helo:not(h1){
+ 		padding: 10px 50px 20px 50px;
+ 	}
+	.nav{
+		font-size: 12pt;
+		flex-direction: column;
+	}
+	.logo{
+		position: static;
+		text-align: center;
+		font-size: 24pt;
+	}
+	.neple_layer{
+ 		font-size: 80pt;
+ 	}
+ 	 .helo:not(h1){
+		font-size: 8pt;
+	}
+	.helo{
+		padding: 10px 56px 10px 56px;	
+	}
+	.helo h1{
+ 		font-size: 35pt;
+ 	}
+ 	.about1, .about2{
+		font-size: 8pt;
+	}
+	.questionbox h1{
+		font-size: 20pt;
+	}
+	.questionbox a{
+		font-size: 8pt;
+	}
+	.menu{
+		margin-right: 20px;
+	}
+}
+
+@media screen and (max-width:700px){
+	.neple_layer{
+ 		font-size: 60pt;
+ 	}
+ 	.social img{
+ 		height: 6vw;
+ 		width: 6vw;
+ 	}
+	.about1{
+ 		background: #fbfbfb;
+ 		padding: 10px 20px 10px 20px;
+ 	}
+ 	.about2{
+ 		padding: 10px 20px 10px 20px;
+	}	
+	.helo{
+		padding: 8px 20px 10px 10px;	
+	}
+	.questionbox h1{
+		font-size: 12pt;
+	}
+	.questionbox a{
+		font-size: 8pt;
+	}
+}
+
+@media screen and (max-width:400px){
+	.neple_layer{
+		font-size: 20pt;
+	}
+	.main_text hr{
+ 		margin-top: 0px;
+	}
+}
