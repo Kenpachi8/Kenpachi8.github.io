@@ -164,7 +164,7 @@ body{
 }
 
 .modal{
-	display: block;
+	display: none;
 	margin-top: 10vw;
 	width: 60vw;
 	height: 60vw;
