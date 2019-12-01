@@ -1,49 +1,30 @@
 let screenHeight = document.documentElement.clientHeight;
-document.querySelector('.box3').style.width = 
-	document.querySelector('.box2').clientWidth + 
-	document.querySelector('.box1').clientWidth + 20 +'px'
-document.querySelector('.questions').style.height = 
-	document.querySelector('.question_container').clientHeight + 'px'
-
-document.querySelector('.question_container').style.marginTop = document.querySelector('.questions').clientHeight + 'px'
-
-document.querySelector('.main_text').style.marginTop = 
-	document.querySelector('.main').clientHeight + 
-	document.querySelector('.nav').clientHeight+
-	'px'
-
-
-window.addEventListener('resize', function () {
+let screenWidth = document.documentElement.clientHeight;
+let modal = document.querySelector('.modal');
+function styles () {
 	document.querySelector('.box3').style.width = 
 		document.querySelector('.box2').clientWidth + 
 		document.querySelector('.box1').clientWidth + 20 +'px'
 	document.querySelector('.questions').style.height = 
-		document.querySelector('.question_container').clientHeight + 'px'
+		document.querySelector('.question_container').clientHeight + 'px';
 
 	document.querySelector('.question_container').style.marginTop = 
-		document.querySelector('.questions').clientHeight + 'px'
+		document.querySelector('.questions').clientHeight + 'px';
 
 	document.querySelector('.main_text').style.marginTop = 
 		document.querySelector('.main').clientHeight + 
-		document.querySelector('.nav').clientHeight+
-		'px'	 
-})
+		document.querySelector('.nav').clientHeight + 'px';
 
-window.addEventListener('orientationchange', function () {
-	document.querySelector('.box3').style.width = 
-		document.querySelector('.box2').clientWidth + 
-		document.querySelector('.box1').clientWidth + 20 +'px'
-	document.querySelector('.questions').style.height = 
-		document.querySelector('.question_container').clientHeight + 'px'
 
-	document.querySelector('.question_container').style.marginTop = 
-		document.querySelector('.questions').clientHeight + 'px'
+	screenWidth > screenHeight? 
+	modal.style.width = modal.style.height = '60vh' :
+	modal.style.width = modal.style.height = '60vw'; 
+}
 
-	document.querySelector('.main_text').style.marginTop = 
-		document.querySelector('.main').clientHeight + 
-		document.querySelector('.nav').clientHeight+
-		'px'	 
-})
+styles();
+
+window.addEventListener('resize', styles);
+window.addEventListener('orientationchange', styles);
 
 window.addEventListener('scroll', function() {
 	//console.log(window.scrollY);
@@ -61,7 +42,7 @@ window.addEventListener('scroll', function() {
 	if (window.scrollY > questionsY - screenHeight){
 		setTimeout(function () {
 			document.querySelector('.question_container').style.marginTop = 0 + 'px';
-			document.querySelector('.gradient3').style.opacity = '0.8';
+			document.querySelector('.gradient3').style.opacity = '0.6';
 		}, 1000)
 	}
 });
@@ -77,6 +58,5 @@ function modalWindow(){
 }
 
 document.querySelector('.exit').addEventListener('click', function() {
-	document.querySelector('.modal').style.display = 'none';
+	modal.style.display = 'none';
 })
-
