@@ -13,12 +13,36 @@ document.querySelector('.main_text').style.marginTop =
 	'px'
 
 
+window.addEventListener('resize', function () {
+	document.querySelector('.box3').style.width = 
+		document.querySelector('.box2').clientWidth + 
+		document.querySelector('.box1').clientWidth + 20 +'px'
+	document.querySelector('.questions').style.height = 
+		document.querySelector('.question_container').clientHeight + 'px'
+
+	document.querySelector('.question_container').style.marginTop = 
+		document.querySelector('.questions').clientHeight + 'px'
+
+	document.querySelector('.main_text').style.marginTop = 
+		document.querySelector('.main').clientHeight + 
+		document.querySelector('.nav').clientHeight+
+		'px'	 
+})
+
 window.addEventListener('orientationchange', function () {
 	document.querySelector('.box3').style.width = 
 		document.querySelector('.box2').clientWidth + 
 		document.querySelector('.box1').clientWidth + 20 +'px'
 	document.querySelector('.questions').style.height = 
-		document.querySelector('.question_container').clientHeight + 'px'	 
+		document.querySelector('.question_container').clientHeight + 'px'
+
+	document.querySelector('.question_container').style.marginTop = 
+		document.querySelector('.questions').clientHeight + 'px'
+
+	document.querySelector('.main_text').style.marginTop = 
+		document.querySelector('.main').clientHeight + 
+		document.querySelector('.nav').clientHeight+
+		'px'	 
 })
 
 window.addEventListener('scroll', function() {
