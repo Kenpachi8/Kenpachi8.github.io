@@ -1,6 +1,6 @@
 *{
 	box-sizing: border-box;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Raleway', 'Montserrat', sans-serif;
 }
 body{
 	margin: 0;
@@ -210,7 +210,6 @@ body{
 }
 
 .question_container{
-        margin-top: 300%
 	display: flex;
 	padding: 100px 50px 100px 50px;
  	justify-content: center;

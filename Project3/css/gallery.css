@@ -1,0 +1,223 @@
+*{
+	box-sizing: border-box;
+	font-family: 'Raleway', 'Montserrat', sans-serif;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+.menu_container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.menu_container b{
+	margin: 0 3px;
+	color: black;
+}
+.nav{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+	color: white;
+	font-size: 23pt;
+	font-weight: 100;
+	padding: 10px 0;
+}
+.nav a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	cursor: pointer;
+	color: white;
+}
+.menu{
+	font-weight: 200;
+	display: block;
+	border-bottom: 1px solid #000;
+}
+.menu:nth-child(2){
+	margin: 0 21vw;
+}
+
+.menu:first-child b{
+	color: white;
+}
+
+.menu:hover b{
+	color: white;
+}
+ .logo{
+	font-weight: 600;
+	font-size: 35pt;
+	margin-right: 0px;
+	position: absolute;
+	right: 10px;
+ }
+
+.questions{
+ 	display: flex;
+ 	height: 100%;
+	padding: 60px 10vw 60px 10vw;
+ 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+ 	background: #1a1a1a;
+ 	min-height: 100vh;
+ }
+
+.questionbox{
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	cursor: pointer;
+	width: 40vw;
+ 	height: 40vw;
+}
+.questionbox h2{
+	position: absolute;
+	top: 10px;
+	font-weight: 800;
+	font-size: 25pt;
+	color: #fff;
+}
+.questionbox a{
+	text-decoration: none;
+	font-weight: 100;
+	font-size: 20pt;
+	color: #fff;
+	border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+.questionbox a:hover{
+	border-bottom: 1px solid #fff;
+}
+.gradient2{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+ 	height: 100%;
+ 	background: radial-gradient(300% 20%,rgba(20,20,20,0.4),rgba(255,255,255,0.1));
+ 	z-index: 0;
+ 	position: relative;
+ 	opacity: 1;
+}
+.questions_line{
+	display: flex;
+ 	justify-content: center;
+	align-items: center;
+}
+#box1{
+ 	background: url(../img/thematic.jpg) no-repeat center top / cover;
+ 	margin: 10px;
+}
+#box2{
+	background: url(../img/fashion.jpg) no-repeat center top / cover;
+ 	margin: 10px;
+}
+#box3{
+	background: url(../img/beauty.jpg) no-repeat center top / cover;
+ 	margin: 10px;
+}
+#box4{
+	background: url(../img/regular.jpg) no-repeat center top / cover;
+ 	margin: 10px;
+}
+
+.social{
+	padding: 10px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #1a1a1a;
+}
+.social img{
+	height: 60px;
+	margin-left: 20px;
+}
+.social img:hover{
+	opacity: 0.7;
+}
+
+
+@media screen and (max-width:1400px){
+	.menu:nth-child(2){
+		margin: 0 16vw;
+	}
+	.nav{
+		font-size: 16pt;
+	}
+	.logo{
+		font-size: 25pt;
+	}
+	.questionbox h2{
+		font-size: 28pt;
+	}
+	.questionbox a{
+		font-size: 12pt;
+	}
+}
+
+@media screen and (max-width:1000px){
+	.menu:nth-child(2){
+		margin: 0 13vw;
+	}
+	.questions_line{
+		flex-direction: column;
+	}
+	.questionbox{
+		width: 60vw;
+		height: 60vw;
+	}
+}
+@media screen and (max-width:800px){
+	.nav{
+		font-size: 12pt;
+		flex-direction: column;
+	}
+	.logo{
+		position: static;
+		text-align: center;
+		font-size: 17pt;
+	}
+	.questionbox h2{
+		font-size: 20pt;
+	}
+	.questionbox a{
+		font-size: 8pt;
+	}
+	.menu:nth-child(2){
+		margin: 0 24vw;
+	}
+}
+
+@media screen and (max-width:700px){
+ 	.social img{
+ 		height: 6vw;
+ 		width: 6vw;
+ 	}
+	.questionbox h2{
+		font-size: 12pt;
+	}
+	.questionbox a{
+		font-size: 8pt;
+	}
+}
+
+@media screen and (max-width:400px){
+	.menu:nth-child(2){
+		margin: 0 15vw;
+	}
+}
+@media screen and (max-width:300px){
+	.menu:nth-child(2){
+		margin: 0 10vw;
+	}
+}
