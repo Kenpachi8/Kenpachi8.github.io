@@ -1,10 +1,7 @@
 let screenHeight = document.documentElement.clientHeight;
 let screenWidth = document.documentElement.clientHeight;
 let modal = document.querySelector('.modal');
-function styles () {
-	let screenHeight = document.documentElement.clientHeight;
-	let screenWidth = document.documentElement.clientHeight;
-	
+function styles(){
 	document.querySelector('.box3').style.width = 
 		document.querySelector('.box2').clientWidth + 
 		document.querySelector('.box1').clientWidth + 20 +'px'
@@ -42,7 +39,7 @@ window.addEventListener('scroll', function() {
 	if (window.scrollY > questionsY - screenHeight){
 		setTimeout(function () {
 			document.querySelector('.question_container').style.marginTop = 0 + 'px';
-			document.querySelector('.gradient3').style.opacity = '0.6';
+			document.querySelector('.gradient3').style.opacity = '0.7';
 		}, 1000)
 	}
 });
