@@ -211,6 +211,7 @@ body{
 
 .question_container{
 	display: flex;
+	margin-top: 200%;
 	padding: 100px 50px 100px 50px;
  	justify-content: center;
 	align-items: center;
