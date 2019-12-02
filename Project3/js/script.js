@@ -2,6 +2,9 @@ let screenHeight = document.documentElement.clientHeight;
 let screenWidth = document.documentElement.clientHeight;
 let modal = document.querySelector('.modal');
 function styles () {
+	let screenHeight = document.documentElement.clientHeight;
+	let screenWidth = document.documentElement.clientHeight;
+	
 	document.querySelector('.box3').style.width = 
 		document.querySelector('.box2').clientWidth + 
 		document.querySelector('.box1').clientWidth + 20 +'px'
