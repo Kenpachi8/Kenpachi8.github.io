@@ -313,7 +313,7 @@ body{
 	align-items: center;
 	background: #1a1a1a;
 }
-.social img{
+.social img:not(.social img:first-child){
 	height: 60px;
 	margin-left: 20px;
 }
