@@ -137,9 +137,9 @@ body{
 	align-items: center;
 	background: #1a1a1a;
 }
-.social img:not(.social img:first-child){
+.social img{
 	height: 60px;
-	margin-left: 20px;
+	margin: 0px 20px;
 }
 .social img:hover{
 	opacity: 0.7;
