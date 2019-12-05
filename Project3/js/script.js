@@ -11,11 +11,6 @@ function styles () {
 	document.querySelector('.questions').style.height = 
 		document.querySelector('.question_container').clientHeight + 'px';
 
-	document.querySelector('.main_text').style.marginTop = 
-		document.querySelector('.main').clientHeight + 
-		document.querySelector('.nav').clientHeight + 'px';
-
-
 	screenWidth > screenHeight? 
 	modal.style.width = modal.style.height = '60vh' :
 	modal.style.width = modal.style.height = '60vw'; 
