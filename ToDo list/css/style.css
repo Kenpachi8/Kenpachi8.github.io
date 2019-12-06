@@ -84,7 +84,7 @@ ul li:nth-child(2n+1){
 .data{
 	padding: 5px;
 	height: 40px;
-	width: 180px;
+	width: auto;
 	text-align: right;
 }
 
