@@ -3,16 +3,17 @@ let input = document.querySelector('input'),
 
 function styles () {
 	let screenWidth = document.documentElement.clientWidth;
-	document.querySelectorAll('.content').forEach(item => item.style.width = screenWidth - 230 + 'px');
-	console.log(screenWidth - 230 + 'px');
+	if (screenWidth < 600){
+		document.querySelectorAll('.content').forEach(item => item.style.width = screenWidth - 160 + 'px');	
+	}
+	else
+		document.querySelectorAll('.content').forEach(item => item.style.width = screenWidth - 230 + 'px');
 }
 
 window.addEventListener('resize', function () {
-	console.log('work1');
 	styles();
 });
 window.addEventListener('orientationchange', function () {
-	console.log('work2');
 	styles();
 });
 
