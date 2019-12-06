@@ -55,6 +55,7 @@ function postTask () {
 		document.querySelector('ul').prepend(li);
 		deleteDiv.addEventListener('click', deleteTask);
 		expandBtn.addEventListener('click', expand);
+                content.addEventListener('click', expand);
 		input.value = '';
 		styles();
 	}
