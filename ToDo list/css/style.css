@@ -70,9 +70,6 @@ ul li:nth-child(2n+1){
 	color: #555555;
 	transition: 500ms;
 }
-.expand:hover{
-	background: #84c3be;
-}
 .delete:hover{
 	background: #FF4040;
 }
