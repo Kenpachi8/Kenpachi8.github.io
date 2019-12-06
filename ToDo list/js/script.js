@@ -1,6 +1,21 @@
 let input = document.querySelector('input'),
 	postBtn = document.querySelector('.post_btn');
 
+function styles () {
+	let screenWidth = document.documentElement.clientWidth;
+	document.querySelectorAll('.content').forEach(item => item.style.width = screenWidth - 230 + 'px');
+	console.log(screenWidth - 230 + 'px');
+}
+
+window.addEventListener('resize', function () {
+	console.log('work1');
+	styles();
+});
+window.addEventListener('orientationchange', function () {
+	console.log('work2');
+	styles();
+});
+
 postBtn.addEventListener('click', postTask);
 input.addEventListener('keydown', function (e) {
 	if(e.key == 'Enter' || e.code == 'Enter')
@@ -40,6 +55,7 @@ function postTask () {
 		deleteDiv.addEventListener('click', deleteTask);
 		expandBtn.addEventListener('click', expand);
 		input.value = '';
+		styles();
 	}
 }
 

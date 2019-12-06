@@ -10,7 +10,7 @@ header{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 10px 40px;
+	padding: 10px 15px;
 	width: 100vw;
 	height: 150px;
 	background: #efefef;
@@ -74,14 +74,14 @@ ul li:nth-child(2n+1){
 	background: #FF4040;
 }
 .content{
-	padding: 10px;
-	width: 100%;
+	padding: 5px;
 	overflow: hidden;
+	font-size: 25px;
 }
 .data{
 	padding: 5px;
 	height: 40px;
-	width: auto;
+	width: 150px;
 	text-align: right;
 }
 
