@@ -63,6 +63,7 @@ function postTask () {
 function deleteTask (e) {
 	e.target.parentNode.style.width = '0px';
 	e.target.parentNode.childNodes[1].innerHTML = '';
+        e.target.parentNode.style.height = '40px';
 	setTimeout(function () {
 		e.target.parentNode.remove();
 	}, 1000)
