@@ -24,7 +24,7 @@ input.addEventListener('keydown', function (e) {
 		postTask();
 });
 
-sortBtn.addEventListener('click', function () {
+sortBtn.addEventListener('click', function (e) {
 	ul = document.querySelector('ul');
 	list = document.querySelectorAll('li');
 	list.forEach(item => ul.prepend(item));

@@ -66,6 +66,7 @@ ul li{
 	width: 100vw;
 	cursor: pointer;
 	font-size: 25px;
+	word-wrap: break-word;
 	transition: 1s;
 	overflow: hidden;
 }
