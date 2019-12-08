@@ -28,6 +28,14 @@ sortBtn.addEventListener('click', function () {
 	ul = document.querySelector('ul');
 	list = document.querySelectorAll('li');
 	list.forEach(item => ul.prepend(item));
+
+	if(ul.hasAttribute('reverse')){
+		ul.removeAttribute('reverse');
+	}
+	else{
+		ul.setAttribute('reverse','');
+	}
+
 })
 
 function postTask () {
@@ -59,7 +67,13 @@ function postTask () {
 
 		data.insertAdjacentText('afterbegin', postingData);
 
-		document.querySelector('ul').prepend(li);
+		if(document.querySelector('ul').hasAttribute('reverse')){
+			document.querySelector('ul').append(li);
+		}
+		else{
+			document.querySelector('ul').prepend(li);
+		}
+
 		deleteDiv.addEventListener('click', deleteTask);
 		expandBtn.addEventListener('click', expand);
            
