@@ -14,6 +14,7 @@ header{
 	width: 100vw;
 	height: 150px;
 	background: #efefef;
+	position: relative;
 }
 .post_btn{
 	display: flex;
@@ -30,6 +31,22 @@ header{
 }
 .post_btn:hover{
 	opacity: 0.8;
+}
+.sort_btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 20px;
+	width: 30px;
+	height: 30px;
+	background: #000;
+	color: #fff;
+	font-size: 20pt;
+	font-weight: 300;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
 input{
 	outline: none;
@@ -80,7 +97,7 @@ ul li:nth-child(2n+1){
 }
 .data{
 	padding: 5px;
-	height: 40px;
+	height: auto;
 	width: 150px;
 	text-align: right;
 }

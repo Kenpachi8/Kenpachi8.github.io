@@ -1,5 +1,6 @@
 let input = document.querySelector('input'),
-	postBtn = document.querySelector('.post_btn');
+	postBtn = document.querySelector('.post_btn'),
+	sortBtn = document.querySelector('.sort_btn');
 
 function styles () {
 	let screenWidth = document.documentElement.clientWidth;
@@ -22,6 +23,12 @@ input.addEventListener('keydown', function (e) {
 	if(e.key == 'Enter' || e.code == 'Enter')
 		postTask();
 });
+
+sortBtn.addEventListener('click', function () {
+	ul = document.querySelector('ul');
+	list = document.querySelectorAll('li');
+	list.forEach(item => ul.prepend(item));
+})
 
 function postTask () {
 	if( input.value.split(' ').join('') != ''){
@@ -88,4 +95,3 @@ function expand (e) {
 		e.target.removeAttribute("expanded");		
 	}
 }
-
